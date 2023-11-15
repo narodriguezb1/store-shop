@@ -10,9 +10,9 @@ const leftMenu = [
 
 const rightMenu = [
   { name: "nestorx211@gmail.com", to: "/", className: "" },
-  { name: "My Orders", to: "my-orders", className: "" },
-  { name: "My Account", to: "my-account", className: "" },
-  { name: "Sign In", to: "sign-in", className: "" },
+  { name: "My Orders", to: "/my-orders", className: "" },
+  { name: "My Account", to: "/my-account", className: "" },
+  { name: "Sign In", to: "/sign-in", className: "" },
   { name: "Carrito", to: "/", className: "" },
 ];
 
