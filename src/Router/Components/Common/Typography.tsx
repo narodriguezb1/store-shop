@@ -1,7 +1,9 @@
 import React from 'react';
+
+import type { ColorKey, TypographyMap, TypographyProps} from '../../Types/';
 import {colors} from '../../Theme';
 
-const typography = {
+const typography: TypographyMap = {
   fontSize: {
     xs: 'text-xs',
     sm: 'text-sm',
@@ -29,7 +31,7 @@ const typography = {
 };
 
 const Typography: React.FC<
-  React.PropsWithChildren<null>
+  React.PropsWithChildren<TypographyProps>
 > = props => {
   const {
     fontSize: fontSizeKey = 'base',
@@ -43,12 +45,13 @@ const Typography: React.FC<
     italic,
     element: Element = 'p',
     ellipsis = false,
+    ...textProps
   } = props;
 
   return (
     <Element
       style={{
-        color: colors[(colorKey) || 'black'],
+        color: colors[(colorKey as ColorKey) || 'black'],
         fontFamily: fontFamilyKey,
         fontStyle: italic ? 'italic' : undefined,
         ...style,
@@ -57,7 +60,8 @@ const Typography: React.FC<
         typography.fontSize[fontSizeKey]
       } ${typography.textAlign[textAlignKey]} ${
         typography.fontWeight[fontWeightKey]
-      } ${classNameT}`}>
+      } ${classNameT}`}
+      {...textProps}>
       {children}
     </Element>
   );
