@@ -18,7 +18,7 @@ const NavBar = () => {
       <Box w="40%" />
       <Flex justifyContent={"space-between"} w="100%">
         {rightMenu.map((link) => (
-          <NavLink key={link.name} to={link.to}>
+          <NavLink key={link.name} to={link.to} className={className}>
             {link.name}
           </NavLink>
         ))}
