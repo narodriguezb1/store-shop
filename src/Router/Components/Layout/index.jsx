@@ -6,14 +6,7 @@ const Layout = ({ children }) => {
     children: PropTypes.node.isRequired,
   };
   return (
-    <Box
-      mt="20"
-      justifyContent="center"
-      p="10"
-      alignItems={"center"}
-      w="100%"
-      h="100%"
-    >
+    <Box mt="20" p="10" w="100%" h="100%">
       {children}
     </Box>
   );
