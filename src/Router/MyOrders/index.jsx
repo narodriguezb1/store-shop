@@ -1,7 +1,7 @@
 import Layout from "../Components/Layout";
 
 const MyOrders = () => {
-  return <Layout>Home</Layout>;
+  return <Layout>MyOrders</Layout>;
 };
 
 export default MyOrders;
