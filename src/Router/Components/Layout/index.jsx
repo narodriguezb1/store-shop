@@ -5,7 +5,18 @@ const Layout = ({ children }) => {
   Layout.propTypes = {
     children: PropTypes.node.isRequired,
   };
-  return <Box className="flex flex-col mt-15">{children}</Box>;
+  return (
+    <Box
+      mt="20"
+      justifyContent="center"
+      p="10"
+      alignItems={"center"}
+      w="100%"
+      h="100%"
+    >
+      {children}
+    </Box>
+  );
 };
 
 export default Layout;

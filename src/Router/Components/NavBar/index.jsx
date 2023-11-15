@@ -5,10 +5,7 @@ import Typography from "../Common/Typography";
 
 const NavBar = () => {
   return (
-    <Flex
-      as={"nav"}
-      style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100 }}
-    >
+    <Flex as={"nav"} top="0" position={"fixed"} left="0" right="0">
       <Flex justifyContent={"space-between"} w="100%">
         {leftMenu.map((section) => (
           <NavLink
