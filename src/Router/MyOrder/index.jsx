@@ -1,8 +1,6 @@
-
+import Layout from "../Components/Layout";
 const MyOrder = () => {
-  return (
-    <div>Home</div>
-  )
-}
+  return <Layout>My Order</Layout>;
+};
 
-export default MyOrder
+export default MyOrder;
