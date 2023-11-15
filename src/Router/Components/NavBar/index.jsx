@@ -16,7 +16,9 @@ const NavBar = () => {
             to={section.to}
             className={section.className}
           >
-            <Typography>{section.name}</Typography>
+            <Typography fontSize="xl" textAlign="center">
+              {section.name}
+            </Typography>
           </NavLink>
         ))}
       </Flex>
@@ -24,7 +26,9 @@ const NavBar = () => {
       <Flex justifyContent={"space-between"} w="100%">
         {rightMenu.map((link) => (
           <NavLink key={link.name} to={link.to} className={link.className}>
-            <Typography>{link.name}</Typography>
+            <Typography fontSize="xl" textAlign="center">
+              {link.name}
+            </Typography>
           </NavLink>
         ))}
       </Flex>
