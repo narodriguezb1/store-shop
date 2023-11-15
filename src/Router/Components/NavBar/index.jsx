@@ -1,6 +1,7 @@
 import { Flex, Box } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import { rightMenu, leftMenu } from ".";
+import Typography from "../Common/Typography";
 
 const NavBar = () => {
   return (
@@ -15,7 +16,7 @@ const NavBar = () => {
             to={section.to}
             className={section.className}
           >
-            {section.name}
+            <Typography>{section.name}</Typography>
           </NavLink>
         ))}
       </Flex>
@@ -23,7 +24,7 @@ const NavBar = () => {
       <Flex justifyContent={"space-between"} w="100%">
         {rightMenu.map((link) => (
           <NavLink key={link.name} to={link.to} className={link.className}>
-            {link.name}
+            <Typography>{link.name}</Typography>
           </NavLink>
         ))}
       </Flex>

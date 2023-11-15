@@ -1,0 +1,20 @@
+// FIXME: Find a way to import this object in tailwind.config.js, now there are duplicated colors object
+export const colors = {
+  white: '#FFFFFF',
+  whiteDark: '#FCFEFD',
+  black: '#171918',
+  transparent: 'transparent',
+  current: 'currentColor',
+  primary: '#00BD45',
+  primaryLight: '#80EAA7',
+  primaryExtraLight: '#EAFAF3',
+  green: '#2ECC71',
+  red: '#8F0600',
+  yellow: '#FFCF0F',
+  redLight: '#DB0900',
+  gray: '#DEDDD8',
+  grayLight: '#C6E7E1',
+  grayDark: '#2E787C',
+  secondary: '#A2E701',
+  orange: '#FF830F',
+} as const;
