@@ -15,7 +15,6 @@ const ProductCard = () => {
           <Button w="70%">More Details</Button>
           <Button>
             <CustomIcon
-              color="primary"
               icon={faCartShopping}
               size="24px"
             />
