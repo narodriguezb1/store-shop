@@ -13,7 +13,13 @@ const rightMenu = [
   { id: "my_orders", name: "My Orders", to: "/my-orders", className: "" },
   { id: "my_account", name: "My Account", to: "/my-account", className: "" },
   { id: "sign_in", name: "Sign In", to: "/sign-in", className: "" },
-  { id: "car", name: "0", to: "/", className: "", iconName: true },
+  {
+    id: "car",
+    name: "1",
+    to: "/",
+    className: "",
+    iconName: true,
+  },
 ];
 
 export { leftMenu, rightMenu };
