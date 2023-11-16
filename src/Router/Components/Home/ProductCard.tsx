@@ -6,27 +6,36 @@ import {
   Image,
   Box,
   CardFooter,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import Typography from "./Typography";
+import Typography from "../Common/Typography";
 import CustomIcon from "../CustomIcon";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import ProductModalBody from "./ProductModalBody";
 
 const ProductCard = ({ product }) => {
-  const { images, title, price, description } = product;
-  const urlImage = images[0];
+  const { image, title, price, description } = product;
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
+    <>
     <Card>
       <CardBody>
-        <Box w="100%" h="200px">
+        <Box >
           <Image
             position={"relative"}
             mb={2}
             w="100%"
             h="100%"
             objectFit={"cover"}
-            src={urlImage}
+            src={image}
           />
         </Box>
         <HStack justifyContent="space-between" mt="5">
@@ -39,17 +48,29 @@ const ProductCard = ({ product }) => {
           >{`$ ${price}`}</Typography>
         </HStack>
 
-        <Typography>{description}</Typography>
+        <Typography ellipsis>{description}</Typography>
       </CardBody>
       <CardFooter>
         <HStack w="100%">
-          <Button w="80%">More Details</Button>
+          <Button w="80%" onClick={onOpen} >More Details</Button>
           <Button ml="auto">
             <CustomIcon icon={faCartShopping} size="24px" />
           </Button>
         </HStack>
       </CardFooter>
     </Card>
+     <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>{title}</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <ProductModalBody product={product} />
+          </ModalBody>
+        </ModalContent>
+      </Modal>
+    </>
+    
   );
 };
 

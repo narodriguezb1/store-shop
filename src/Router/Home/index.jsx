@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { SimpleGrid, Spinner } from "@chakra-ui/react";
 import Layout from "../Components/Layout";
-import ProductCard from "../Components/Common/ProductCard";
+import ProductCard from "../Components/Home/ProductCard";
 import productServices from "../Api/productsApi";
+import Typography from "../Components/Common/Typography";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -31,11 +32,11 @@ const Home = () => {
         <Spinner />
       ) : (
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={4}>
-          {products.length > 0
-            ? products.map((item) => (
-                <ProductCard key={item.id} product={item} />
-              ))
-            : null}
+          {products.length > 0 ? (
+            products.map((item) => <ProductCard key={item.id} product={item} />)
+          ) : (
+            <Typography>There are not products!</Typography>
+          )}
         </SimpleGrid>
       )}
     </Layout>
