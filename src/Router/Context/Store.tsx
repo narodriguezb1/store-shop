@@ -21,12 +21,8 @@ const StoreProvider: React.FC<React.PropsWithChildren<StoreProviderProps>> = ({
   }, []);
 
   const getAllProducts = async () => {
-    try {
-      const response = await productServices.getAllProducts();
-      setProducts(response);
-    } catch (error) {
-      setProducts([]);
-    }
+    const response = await productServices.getAllProducts();
+    setProducts(response);
   };
 
   const storeProvider = useMemo(
