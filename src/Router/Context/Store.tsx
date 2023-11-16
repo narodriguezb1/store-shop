@@ -15,6 +15,7 @@ const StoreProvider: React.FC<React.PropsWithChildren<StoreProviderProps>> = ({
   children,
 }) => {
   const [products, setProducts] = useState(null);
+  const [selectedProducts, setSelectedProducts] = useState([]);
 
   useEffect(() => {
     getAllProducts();
@@ -27,10 +28,12 @@ const StoreProvider: React.FC<React.PropsWithChildren<StoreProviderProps>> = ({
 
   const storeProvider = useMemo(
     () => ({
+      selectedProducts,
+      setSelectedProducts,
       products,
       setProducts,
     }),
-    [products, setProducts]
+    [products, setProducts, selectedProducts, setSelectedProducts]
   );
 
   return (
