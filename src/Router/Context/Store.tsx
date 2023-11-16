@@ -5,7 +5,7 @@ import React, {
   useContext,
   useEffect,
 } from "react";
-import productServices from "../Api/productsApi"
+import productServices from "../Api/productsApi";
 
 export const StoreContext = createContext({});
 
@@ -14,15 +14,19 @@ interface StoreProviderProps {}
 const StoreProvider: React.FC<React.PropsWithChildren<StoreProviderProps>> = ({
   children,
 }) => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState(null);
 
   useEffect(() => {
     getAllProducts();
   }, []);
 
   const getAllProducts = async () => {
-    const response = await productServices.getAllProducts();
-    setProducts(response);
+    try {
+      const response = await productServices.getAllProducts();
+      setProducts(response);
+    } catch (error) {
+      setProducts([]);
+    }
   };
 
   const storeProvider = useMemo(
