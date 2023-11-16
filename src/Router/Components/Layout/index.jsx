@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
     children: PropTypes.node.isRequired,
   };
   return (
-    <Center mt="20" p="10" w="100%" h="100%">
+    <Center p="40" w="100%" h="100%">
       {children}
     </Center>
   );

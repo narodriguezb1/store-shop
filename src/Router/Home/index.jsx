@@ -31,10 +31,11 @@ const Home = () => {
         <Spinner />
       ) : (
         <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={4}>
-          {products &&
-            products.map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
+          {products.length > 0
+            ? products.map((item) => (
+                <ProductCard key={item.id} product={item} />
+              ))
+            : null}
         </SimpleGrid>
       )}
     </Layout>
