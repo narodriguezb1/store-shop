@@ -9,9 +9,7 @@ import productServices from "../Api/productsApi";
 
 export const StoreContext = createContext({});
 
-interface StoreProviderProps {}
-
-const StoreProvider: React.FC<React.PropsWithChildren<StoreProviderProps>> = ({
+const StoreProvider = ({
   children,
 }) => {
   const [products, setProducts] = useState(null);
@@ -46,7 +44,7 @@ const StoreProvider: React.FC<React.PropsWithChildren<StoreProviderProps>> = ({
 export const useStoreContext = () => {
   const useStoreContext = useContext(StoreContext);
   if (!useStoreContext) {
-    throw new Error("useQuestionStepper error");
+    throw new Error("useStoreContext error");
   }
   return useStoreContext;
 };
