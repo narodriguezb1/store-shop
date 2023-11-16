@@ -3,7 +3,7 @@ import { Box, Image, HStack } from "@chakra-ui/react";
 import Typography from "../Common/Typography";
 
 const ProductModalBody = ({ product }) => {
-  const { image, title, price, description } = product;
+  const { images, title, price, description } = product;
 
   return (
     <Box>
@@ -11,9 +11,9 @@ const ProductModalBody = ({ product }) => {
         position="relative"
         mb={2}
         w="100%"
-        h="300px"
+        h="100%"
         objectFit="cover"
-        src={image}
+        src={images[0]}
       />
       <HStack justifyContent="space-between" mt="3">
         <Typography fontWeight="Bold" fontSize="xl">

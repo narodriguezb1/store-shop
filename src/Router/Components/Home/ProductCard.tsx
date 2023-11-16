@@ -21,7 +21,7 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import ProductModalBody from "./ProductModalBody";
 
 const ProductCard = ({ product }) => {
-  const { image, title, price, description } = product;
+  const { images, title, price, description } = product;
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
@@ -35,7 +35,7 @@ const ProductCard = ({ product }) => {
             w="100%"
             h="100%"
             objectFit={"cover"}
-            src={image}
+            src={images[0]}
           />
         </Box>
         <HStack justifyContent="space-between" mt="5">
