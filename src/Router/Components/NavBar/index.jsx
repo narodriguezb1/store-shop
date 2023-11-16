@@ -4,10 +4,37 @@ import { rightMenu, leftMenu } from ".";
 import Typography from "../Common/Typography";
 import CustomIcon from "../CustomIcon";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { useState, useEffect } from "react";
 
 const NavBar = () => {
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <Flex as={"nav"} top="0" position={"fixed"} left="0" right="0" p="6">
+    <Flex
+      as={"nav"}
+      top="0"
+      position={"fixed"}
+      left="0"
+      right="0"
+      p="6"
+      className={isSticky ? "sticky-navbar" : ""}
+    >
       <Flex justifyContent={"space-between"} w="100%">
         {leftMenu.map((section) => (
           <NavLink
