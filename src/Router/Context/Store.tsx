@@ -24,7 +24,7 @@ const StoreProvider = ({
     setProducts(response);
   };
 
-  const storeProvider = useMemo(
+  const value = useMemo(
     () => ({
       selectedProducts,
       setSelectedProducts,
@@ -35,7 +35,7 @@ const StoreProvider = ({
   );
 
   return (
-    <StoreContext.Provider value={storeProvider}>
+    <StoreContext.Provider value={value}>
       {children}
     </StoreContext.Provider>
   );

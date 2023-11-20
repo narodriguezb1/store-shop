@@ -29,10 +29,6 @@ const ProductCard = ({ product }) => {
   const { images, title, price, description } = product;
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  useEffect(() => {
-    console.log(selectedProducts);
-  }, [selectedProducts]);
-
   const addProductToCar = () => {
     const newProductsArray = [...selectedProducts];
     const newProductCar = findProductById(products, product.id)
