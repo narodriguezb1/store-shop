@@ -1,7 +1,6 @@
 import { SimpleGrid, Spinner } from "@chakra-ui/react";
 import Layout from "../Components/Layout";
 import ProductCard from "../Components/Home/ProductCard";
-
 import Typography from "../Components/Common/Typography";
 import { useStoreContext } from "../Context/Store";
 
