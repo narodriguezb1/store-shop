@@ -14,13 +14,14 @@ const NamesGenerator = ({ names }) => {
     setName(null);
   }, []);
 
+  const showName = useMemo(() => {
+    return <Typography>{name ? name : "No hay nombre"}</Typography>;
+  }, [name])
+
+
   return (
     <div>
-      {useMemo(() => {
-        return <Typography>{name ? name : "No hay nombre"}</Typography>;
-      }, [name])}
-
-
+      {showName}
       <WrapperButton onClick={getName} label="Generate Name" />
       <WrapperButton onClick={clearName} label="Delete Name" />
     </div>
