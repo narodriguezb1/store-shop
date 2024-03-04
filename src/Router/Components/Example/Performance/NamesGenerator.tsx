@@ -1,5 +1,5 @@
 import React, { useCallback, useMemo, useState } from "react";
-import Typography from "../Common/Typography";
+import Typography from "../../Common/Typography";
 import WrapperButton from "./WrapperButton";
 
 const NamesGenerator = ({ names }) => {

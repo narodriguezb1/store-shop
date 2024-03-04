@@ -7,7 +7,7 @@ import NotFound from "../NotFound";
 import SignIn from "../SignIn";
 import NavBar from "../Components/NavBar/index.jsx";
 import "./App.css";
-import ExampleComponent from "../Components/Example/ExampleComponent.tsx";
+import ExampleComponent from "../Components/Example/Performance/ExampleComponent.tsx";
 
 const InitialRoutes = () => {
   let routes = useRoutes([

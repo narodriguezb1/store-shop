@@ -1,6 +1,6 @@
 import React from "react";
-import Typography from "../Common/Typography";
-import Layout from "../Layout";
+import Typography from "../../Common/Typography";
+import Layout from "../../Layout";
 import NamesGenerator from "./NamesGenerator";
 
 const ExampleComponent = () => {
