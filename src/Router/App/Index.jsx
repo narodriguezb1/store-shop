@@ -7,13 +7,14 @@ import NotFound from "../NotFound";
 import SignIn from "../SignIn";
 import NavBar from "../Components/NavBar/index.jsx";
 import "./App.css";
-import ExampleComponent from "../Components/Example/Performance/ExampleComponent.tsx";
+//import ExampleComponent from "../Components/Example/Performance/ExampleComponent.tsx";
+import BooleanComponent from "../Components/Example/HooksComponents/BooleanComponent.tsx";
 
 const InitialRoutes = () => {
   let routes = useRoutes([
     {
       path: "/",
-      element: <ExampleComponent/>,
+      element: <BooleanComponent/>,
     },
     {
       path: "/my-order",
